@@ -6,6 +6,6 @@
 - .skip() , .limit() , .sort() for pagination
 - practical exercise on the Electron app with filtering and sorting queries.
 - $text for text searching and index explanation
-- Backend API with node and express (coming soon)
+- Backend API with node and express with geometry for queries
 
 [From here](https://www.udemy.com/the-complete-developers-guide-to-mongodb)
