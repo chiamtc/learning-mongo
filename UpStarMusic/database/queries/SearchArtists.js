@@ -19,6 +19,7 @@ module.exports = (criteria, sortProperty, offset = 0, limit = 20) => {
         query,
         Artist.find(buildQuery(criteria)).count() //for count:count in the question from the query results returned
     ]).then((results) => {
+
         return {
             all: results[0],
             count: results[1], // all[1] order
@@ -49,6 +50,7 @@ const buildQuery = (criteria) => {
             $lte: criteria.yearsActive.max
         };
     }
-
+    console.log(criteria);
+    console.log(query);
     return query;
 };

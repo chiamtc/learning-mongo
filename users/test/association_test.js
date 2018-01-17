@@ -24,11 +24,12 @@ describe('Association...', () => {
 
 
     //it.only() , only executes this it() in the entire test suites
-    it('saves a relation between a user and a blogpost', (done) => {
+    it.only('saves a relation between a user and a blogpost', (done) => {
         User.findOne({name: 'Joe'})
         //blogPosts = the attribute blogPosts in User model
             .populate('blogPosts')
             .then((user) => {
+            console.log(user);
                 assert(user.blogPosts[0].title === 'JS is Great');
                 done();
             })
