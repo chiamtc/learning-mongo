@@ -10,8 +10,11 @@ router.get('/', (req, res, next) => {
 module.exports = router;
 */
 
-const UserRouteController = require('../routes_controller/user_route_controller')
+const PersonRouteController = require('../routes_controller/person_route_controller')
 
 module.exports = (app) => {
-    UserRouteController (app);
+    app.get('/', (req,res)=>{
+        res.send('index')
+    });
+    PersonRouteController (app);
 }

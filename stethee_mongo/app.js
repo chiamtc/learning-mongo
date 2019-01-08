@@ -7,7 +7,9 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
 mongoose.Promise = global.Promise;
-
+if (process.env.NODE_ENV !== 'test') {
+    mongoose.connect('mongodb://localhost/stethee_mongo', {useNewUrlParser: true});
+}
 const app = express();
 
 // view engine setup
